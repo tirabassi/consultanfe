@@ -33,7 +33,7 @@ IF _lServOk == .T.
 		oWs:cUserToken   := "TOTVS"
 		oWs:cID_ENT      := cIdEnt
 		oWs:_URL         := AllTrim(cURL)+"/NFeSBRA.apw"
-		oWs:cCHVNFE      := cChave
+		oWs:cCHVNFE      := AllTrim(cChave)
 		If oWs:CONSULTACHAVENFE()
 			aRet[1]  := oWs:oWSCONSULTACHAVENFERESULT:cCODRETNFE  //Código de Retorn
 			aRet[2]  := oWs:oWSCONSULTACHAVENFERESULT:cMSGRETNFE  //Mensagem
