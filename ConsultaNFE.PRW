@@ -50,7 +50,7 @@ Return aRet
 /*ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
-±±³Programa: TSSIsReady  Autor ³  Carlos Tirabassi     ³ Data ³ 10/05/2016³±±
+±±³Programa: TSSIsReady  Autor ³  Desconhecido		 Data ³           ³±±
 ±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
 ±±³Locacao   ³                  ³Contato ³                                ³±±
 ±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
@@ -100,7 +100,7 @@ Return(lRetorno)
 /*ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
-±±³Programa: GetId       Autor ³  Carlos Tirabassi     ³ Data ³ 20/05/2016³±±
+±±³Programa: GetId       Autor ³  Desconhecido         ³ Data ³ 20/05/2016³±±
 ±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
 ±±³Locacao   ³                  ³Contato ³                                ³±±
 ±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
@@ -130,33 +130,33 @@ EndIF
 
 oWsSPEDAdm := WsSPEDAdm():New()
 
-oWsSPEDAdm:cUSERTOKEN := "TOTVS"
-oWsSPEDAdm:oWsEmpresa:cCNPJ := SM0->(IF(M0_TPINSC==2 .Or. Empty(M0_TPINSC),M0_CGC,""))
-oWsSPEDAdm:oWsEmpresa:cCPF := SM0->( IF(M0_TPINSC==3,M0_CGC,"") )
-oWsSPEDAdm:oWsEmpresa:cIE := SM0->M0_INSC
-oWsSPEDAdm:oWsEmpresa:cIM := SM0->M0_INSCM
-oWsSPEDAdm:oWsEmpresa:cNOME := SM0->M0_NOMECOM
+oWsSPEDAdm:cUSERTOKEN 		:= "TOTVS"
+oWsSPEDAdm:oWsEmpresa:cCNPJ 	:= SM0->(IF(M0_TPINSC==2 .Or. Empty(M0_TPINSC),M0_CGC,""))
+oWsSPEDAdm:oWsEmpresa:cCPF 	:= SM0->( IF(M0_TPINSC==3,M0_CGC,"") )
+oWsSPEDAdm:oWsEmpresa:cIE 	:= SM0->M0_INSC
+oWsSPEDAdm:oWsEmpresa:cIM 	:= SM0->M0_INSCM
+oWsSPEDAdm:oWsEmpresa:cNOME 	:= SM0->M0_NOMECOM
 oWsSPEDAdm:oWsEmpresa:cFANTASIA := SM0->M0_NOME
 oWsSPEDAdm:oWsEmpresa:cENDERECO := FisGetEnd(SM0->M0_ENDENT)[1]
-oWsSPEDAdm:oWsEmpresa:cNUM := FisGetEnd(SM0->M0_ENDENT)[3]
-oWsSPEDAdm:oWsEmpresa:cCOMPL := FisGetEnd(SM0->M0_ENDENT)[4]
-oWsSPEDAdm:oWsEmpresa:cUF := SM0->M0_ESTENT
-oWsSPEDAdm:oWsEmpresa:cCEP := SM0->M0_CEPENT
-oWsSPEDAdm:oWsEmpresa:cCOD_MUN := SM0->M0_CODMUN
+oWsSPEDAdm:oWsEmpresa:cNUM 	:= FisGetEnd(SM0->M0_ENDENT)[3]
+oWsSPEDAdm:oWsEmpresa:cCOMPL 	:= FisGetEnd(SM0->M0_ENDENT)[4]
+oWsSPEDAdm:oWsEmpresa:cUF 	:= SM0->M0_ESTENT
+oWsSPEDAdm:oWsEmpresa:cCEP 	:= SM0->M0_CEPENT
+oWsSPEDAdm:oWsEmpresa:cCOD_MUN 	:= SM0->M0_CODMUN
 oWsSPEDAdm:oWsEmpresa:cCOD_PAIS := "1058"
-oWsSPEDAdm:oWsEmpresa:cBAIRRO := SM0->M0_BAIRENT
-oWsSPEDAdm:oWsEmpresa:cMUN := SM0->M0_CIDENT
-oWsSPEDAdm:oWsEmpresa:cCEP_CP := NIL
-oWsSPEDAdm:oWsEmpresa:cCP := NIL
-oWsSPEDAdm:oWsEmpresa:cDDD := Str(FisGetTel(SM0->M0_TEL)[2],3)
-oWsSPEDAdm:oWsEmpresa:cFONE := AllTrim(Str(FisGetTel(SM0->M0_TEL)[3],15))
-oWsSPEDAdm:oWsEmpresa:cFAX := AllTrim(Str(FisGetTel(SM0->M0_FAX)[3],15))
-oWsSPEDAdm:oWsEmpresa:cEMAIL := UsrRetMail(RetCodUsr())
-oWsSPEDAdm:oWsEmpresa:cNIRE := SM0->M0_NIRE
-oWsSPEDAdm:oWsEmpresa:dDTRE := SM0->M0_DTRE
-oWsSPEDAdm:oWsEmpresa:cNIT := SM0->( IF(M0_TPINSC==1,M0_CGC,"") )
-oWsSPEDAdm:oWsEmpresa:cINDSITESP := ""
-oWsSPEDAdm:oWsEmpresa:cID_MATRIZ := ""
+oWsSPEDAdm:oWsEmpresa:cBAIRRO 	:= SM0->M0_BAIRENT
+oWsSPEDAdm:oWsEmpresa:cMUN 	:= SM0->M0_CIDENT
+oWsSPEDAdm:oWsEmpresa:cCEP_CP 	:= NIL
+oWsSPEDAdm:oWsEmpresa:cCP 	:= NIL
+oWsSPEDAdm:oWsEmpresa:cDDD 	:= Str(FisGetTel(SM0->M0_TEL)[2],3)
+oWsSPEDAdm:oWsEmpresa:cFONE 	:= AllTrim(Str(FisGetTel(SM0->M0_TEL)[3],15))
+oWsSPEDAdm:oWsEmpresa:cFAX 	:= AllTrim(Str(FisGetTel(SM0->M0_FAX)[3],15))
+oWsSPEDAdm:oWsEmpresa:cEMAIL 	:= UsrRetMail(RetCodUsr())
+oWsSPEDAdm:oWsEmpresa:cNIRE 	:= SM0->M0_NIRE
+oWsSPEDAdm:oWsEmpresa:dDTRE 	:= SM0->M0_DTRE
+oWsSPEDAdm:oWsEmpresa:cNIT 	:= SM0->( IF(M0_TPINSC==1,M0_CGC,"") )
+oWsSPEDAdm:oWsEmpresa:cINDSITESP:= ""
+oWsSPEDAdm:oWsEmpresa:cID_MATRIZ:= ""
 oWsSPEDAdm:oWsOutrasInscricoes:oWsInscricao := SPEDADM_ARRAYOFSPED_GENERICSTRUCT():New()
 oWsSPEDAdm:_URL := cURL
 
